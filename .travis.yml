@@ -16,8 +16,7 @@ deploy:
   region: "us-east-2"
   app: "reactapptest"
   env: "Reactapptest-env"
-  bucket_name: "eelasticbeanstalk-us-east-2-160885238704"
+  bucket_name: "elasticbeanstalk-us-east-2-160885238704"
   bucket_path: "docker-youtube"
   on:
     branch: master
-
