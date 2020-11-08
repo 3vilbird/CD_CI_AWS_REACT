@@ -1,0 +1,23 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - docker build  -t devdockerapp  -f Dockerfile.dev .
+
+script:
+  - dokcer run -e CI=true devdockerapp npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $ACCESS_KEY_ID
+  secret_access_key:
+    secure: "$SECRET_ACCESS_KEY"
+  region: "us-east-2"
+  app: "reactapptest"
+  env: "Reactapptest-env"
+  bucket_name: "elasticbeanstalk-us-east-2-160885238704"
+  bucket_path: "reactapptest"
+  on:
+    branch: master
