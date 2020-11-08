@@ -14,9 +14,9 @@ deploy:
   secret_access_key:
     secure: "$SECRET_ACCESS_KEY"
   region: "us-east-2"
-  app: "reactapptest"
-  env: "Reactapptest-env"
+  app: " dockertube"
+  env: "Dockertube-env"
   bucket_name: "elasticbeanstalk-us-east-2-160885238704"
-  bucket_path: "docker-youtube"
+  bucket_path: "dockeryoutube"
   on:
     branch: master
