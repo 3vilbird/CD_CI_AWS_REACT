@@ -1,13 +1,12 @@
 sudo: required
-
 services:
   - docker
 
 before_install:
-  - docker build  -t devdockerapp  -f Dockerfile.dev .
+  - docker build -t dockeryoutube -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true devdockerapp npm run test
+  - docker run -e CI=true dockeryoutube npm run test
 
 deploy:
   provider: elasticbeanstalk
@@ -17,7 +16,8 @@ deploy:
   region: "us-east-2"
   app: "reactapptest"
   env: "Reactapptest-env"
-  bucket_name: "elasticbeanstalk-us-east-2-160885238704"
-  bucket_path: "reactapptest"
+  bucket_name: "eelasticbeanstalk-us-east-2-160885238704"
+  bucket_path: "docker-youtube"
   on:
     branch: master
+
